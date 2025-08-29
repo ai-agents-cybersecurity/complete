@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Model Health Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  <script>
+    window.INIT_MODEL_ID = {{ model_id | tojson }};
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script defer src="{{ url_for('static', filename='app.js') }}"></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container">
+      <h1>Model Health Dashboard</h1>
+      <div class="controls">
+        <label>Model ID
+          <input id="modelIdInput" type="text" value="{{ model_id }}" />
+        </label>
+        <label>Hours
+          <input id="hoursInput" type="number" value="6" min="1" max="168" />
+        </label>
+        <button id="loadBtn" class="btn">Load</button>
+        <button id="refreshBtn" class="btn btn-outline">Refresh</button>
+        <label class="switch">
+          <input id="autoRefreshSwitch" type="checkbox" checked />
+          <span class="slider"></span>
+          <span class="switch-label">Auto-refresh</span>
+        </label>
+      </div>
+    </div>
+  </header>
+
+  <main class="container main">
+    <section class="cards">
+      <div class="card">
+        <div class="card-title">Health Score</div>
+        <div id="healthScore" class="big-number">--</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Current Metrics</div>
+        <div class="metrics-grid">
+          <div><span class="metric-label">Resp. Time (ms):</span> <span id="mRespTime">--</span></div>
+          <div><span class="metric-label">Error %:</span> <span id="mErrorRate">--</span></div>
+          <div><span class="metric-label">Accuracy:</span> <span id="mAccuracy">--</span></div>
+          <div><span class="metric-label">Drift:</span> <span id="mDrift">--</span></div>
+          <div><span class="metric-label">CPU %:</span> <span id="mCpu">--</span></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Alerts</div>
+        <div class="big-number" id="alertCount">--</div>
+      </div>
+    </section>
+
+    <section class="charts">
+      <div class="chart-card">
+        <div class="card-title">Response Time (last N)</div>
+        <canvas id="respChart" height="120"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="card-title">Accuracy (last N)</div>
+        <canvas id="accChart" height="120"></canvas>
+      </div>
+      <div class="chart-card">
+        <div class="card-title">Drift (last N)</div>
+        <canvas id="driftChart" height="120"></canvas>
+      </div>
+    </section>
+
+    <section class="alerts">
+      <div class="card">
+        <div class="card-title">Active Alerts</div>
+        <div class="table-wrap">
+          <table class="table" id="alertsTable">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Time</th>
+                <th>Type</th>
+                <th>Metric</th>
+                <th>Value</th>
+                <th>Threshold</th>
+                <th>Severity</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <div class="status-bar">
+      <span id="statusMsg">Ready</span>
+      <span id="lastUpdated" class="right"></span>
+    </div>
+  </main>
+
+</body>
+</html>

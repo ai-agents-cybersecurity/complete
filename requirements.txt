@@ -1,0 +1,67 @@
+# Core Requirements for AI Agents in Cybersecurity
+# Python 3.8+ required
+
+# Core AI Agent Frameworks
+langchain==0.1.0
+langgraph==0.0.26
+autogen==0.2.0
+crewai==0.1.0
+semantic-kernel==0.4.0
+
+# Machine Learning & AI
+scikit-learn==1.3.0
+numpy==1.24.3
+pandas==2.0.3
+tensorflow==2.13.0
+torch==2.0.0
+transformers==4.30.0
+xgboost==1.7.5
+
+# AI APIs
+openai==1.3.0
+anthropic==0.7.0
+google-generativeai==0.3.0
+
+# Explainable AI
+shap==0.42.0
+lime==0.2.0.1
+
+# Security Libraries
+msticpy==2.0.0
+pymisp==2.4.170
+stix2==3.0.1
+
+# Data Processing
+pydantic==2.0.0
+python-dotenv==1.0.0
+pyyaml==6.0
+jsonschema==4.17.3
+
+# Web Frameworks
+fastapi==0.100.0
+uvicorn==0.23.0
+flask==2.3.2
+requests==2.31.0
+
+# Database
+sqlalchemy==2.0.19
+redis==4.6.0
+pymongo==4.4.1
+elasticsearch==8.8.2
+
+# Monitoring & Logging
+prometheus-client==0.17.1
+opentelemetry-api==1.19.0
+opentelemetry-sdk==1.19.0
+structlog==23.1.0
+
+# Testing
+pytest==7.4.0
+pytest-asyncio==0.21.0
+pytest-cov==4.1.0
+
+# Utilities
+click==8.1.6
+rich==13.4.2
+tqdm==4.65.0
+python-dateutil==2.8.2
