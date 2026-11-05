@@ -33,3 +33,4 @@ jupyterlab==4.0.3
 bandit==1.7.5
 safety==2.3.5
 semgrep==1.34.0
+torch==2.13.0  # VulnOps CVE-2025-3000: transitive dependency floor
