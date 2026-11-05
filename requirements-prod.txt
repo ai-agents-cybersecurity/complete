@@ -54,3 +54,4 @@ boto3==1.28.15  # AWS
 azure-identity==1.13.0
 azure-keyvault-secrets==4.7.0
 google-cloud-secret-manager==2.16.3
+torch==2.13.0  # VulnOps CVE-2025-3000: transitive dependency floor
