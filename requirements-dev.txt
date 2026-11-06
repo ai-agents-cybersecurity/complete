@@ -33,3 +33,4 @@ jupyterlab==4.0.3
 bandit==1.7.5
 safety==2.3.5
 semgrep==1.34.0
+transformers==5.10.0  # VulnOps CVE-2026-9856: transitive dependency floor
