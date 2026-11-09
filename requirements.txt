@@ -2,7 +2,7 @@
 # Python 3.8+ required
 
 # Core AI Agent Frameworks
-langchain==0.1.0
+langchain==1.4.6
 langgraph==0.0.26
 autogen==0.2.0
 crewai==0.1.0

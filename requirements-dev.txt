@@ -33,3 +33,4 @@ jupyterlab==4.0.3
 bandit==1.7.5
 safety==2.3.5
 semgrep==1.34.0
+langchain==1.4.6  # VulnOps CVE-2026-55443: transitive dependency floor
