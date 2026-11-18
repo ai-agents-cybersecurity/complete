@@ -27,7 +27,7 @@ myst-parser==2.0.0
 ipython==8.14.0
 ipdb==0.13.13
 jupyter==1.0.0
-jupyterlab==4.0.3
+jupyterlab==4.5.11
 
 # Security Testing
 bandit==1.7.5
