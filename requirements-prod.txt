@@ -6,7 +6,7 @@
 
 # Production Web Servers
 gunicorn==21.2.0
-gevent==23.7.0
+gevent==23.9.0
 
 # Production Databases
 psycopg2-binary==2.9.6
