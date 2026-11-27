@@ -34,7 +34,7 @@ python-jose[cryptography]==3.3.0
 newrelic==8.8.1
 sentry-sdk==1.28.1
 elastic-apm==6.18.0
-ddtrace==1.15.0
+ddtrace==3.19.9
 
 # Rate Limiting
 slowapi==0.1.8
